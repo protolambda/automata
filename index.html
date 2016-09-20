@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cellular Automata | protolambda.com</title>
+
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+
+  <canvas id="main-canvas"></canvas>
+
+  <pre id="key-info">
+            [left mouse]: fill cell (draw)
+    [middle/right mouse]: clear cell (erase)
+    [up/down/left/right]: shift world (regenerates!)
+                [delete]: clear state
+                     [r]: (re)generate
+                 [space]: pause/unpause
+                     [n]: one step
+                     [s]: save state
+           [s] + [shift]: load state
+                     [h]: hide/show gui
+  </pre>
+
+  <code id="info">
+    Cellular automata sandbox, by <a href="https://twitter.com/protolambda">@protolambda</a>
+    | <a href="https://protolambda.com">protolambda.com</a><br/>
+  </code>
+
+    <script src="bundle.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-78379551-5', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  </body>
+</html>

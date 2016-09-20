@@ -1,0 +1,27 @@
+# This git-ignore file is used for gh-pages deployment by Travis CI
+
+# Ignore everything:
+*
+
+# But deploy:
+# ================
+
+!README.md
+
+!LICENSE
+
+
+# web page resources
+!*.html
+!*.css
+
+# javascript
+!bundle.js
+
+# GLSL
+!glsl/*
+
+# gh-pages domain name configuration
+!CNAME
+
+

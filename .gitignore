@@ -1,0 +1,13 @@
+# Logs
+logs
+*.log
+
+# Browserify
+.bundle.js
+bundle.js
+
+# Dependency directory
+node_modules
+
+# Jetbrains IDEA, webstorm, etc.
+.idea

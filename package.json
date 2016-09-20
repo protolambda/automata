@@ -1,0 +1,43 @@
+{
+  "name": "automata",
+  "version": "0.0.1",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "watchify src/main.js -o bundle.js --debug --verbose & st --no-cache",
+    "build": "browserify src/main.js -o bundle.js -p [minifyify --no-map] --verbose",
+    "lint": "eslint src"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      "brfs"
+    ]
+  },
+  "plugin": {},
+  "devDependencies": {
+    "babel-preset-es2015": "*",
+    "babel-eslint": "*",
+    "babelify": "*",
+    "brfs": "*",
+    "browserify": "*",
+    "eslint": "*",
+    "minifyify": "*",
+    "st": "*",
+    "watchify": "*"
+  },
+  "dependencies": {
+    "exdat": "^0.6.2",
+    "jquery": "^3.1.0",
+    "stats.js": "0.16.0",
+    "victor": "^1.1.0"
+  },
+  "private": true
+}

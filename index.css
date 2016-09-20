@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#main-canvas {
+  position: absolute;
+  z-index: 0;
+}
+
+#stats {
+  position: absolute;
+  z-index: 20;
+  top: 5px;
+  left: 5px;
+}
+
+#key-info {
+  bottom: 35px;
+  left: 5px;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+}
+
+#info {
+  bottom: 5px;
+  left: 5px;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+}
+
+#info button, #info input {
+  color: #000;
+}
+
+#info a {
+  color: #fff;
+}

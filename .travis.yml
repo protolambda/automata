@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+- '6'
+branches:
+  only:
+  - master
+install:
+- npm install
+before_script:
+- set -e
+- rm -rf .git
+- mv -fv .deploy_gitignore .gitignore
+- git init
+- git remote add -t $DEPLOY_BRANCH origin https://${GH_TOKEN}@${DEPLOY_REPO} > /dev/null
+  2>&1
+- git config --global user.name "protolambda - Travis CI"
+- git config --global user.email "protolambdamail@gmail.com"
+- ls -a
+script:
+- npm run build
+after_success:
+- git add -A .
+- git commit -m "dist - by Travis CI"
+- git log
+- git branch -m $DEPLOY_BRANCH
+- git push -qfu origin $DEPLOY_BRANCH
+env:
+  global:
+  - DEPLOY_REPO=github.com/protolambda/automata.git
+  - DEPLOY_BRANCH=gh-pages
+  - secure: hzFkemqNk9irg6LX1kF7BJgF2tAkDJoUZzfyZAg6gp5qpdyguRaVASNwjtEIhaq08x2Ize+YttNVW29RDGfr6pEEzBdjPdNPkWe9GUzNLx+oJqV1p3Z3TDtbIsoSI/Ya9LW1jx3/nHE/EKoU3IIy0gOVuG4aNm70ZPZWfK+jJbvBDThc6NXp8866PQvjDH6ZxfpmKwT1o6/eovU3A69vwH6j0Tl2eZBQRplipg7eFzrd73dAy9rq2UhcZ3PeCNgSs0fiVrh0kUWtlY9oLrRry6J5Bep73mTwew/oqiNQ1OCoofQI3JiCxRW6evhzk0FCzuOBhKsr2LOyuKZ5Z6JwsoWaRqTaoZ2w7d8nBPCH0uINO7lvzO6+sHGSumid2vGlf/K1iVulAfMC6u3LOpxnWC62NFRrsYJBNxbqbZWNvNd3OTCrxoQRIO3TnZF0tbySkZ1QWmJehLeTOYzOdRk2CLVRNs+iCcWZy4/4SrECgZ44vLJCAt8p8fWsizRch3OVzbaf1i04sTy3Fkr9cIO5XlEbL4PG9bVt6RUz7mhZ1Y59hSVBQ9ceHfMJYC7zQVZRN2nmMyz4aLcKhpKRI0VXoPCmVX4WNm1JlfKDaWBLyn8/X0GgaFFtjMQbmLoyT4F+YBMceZyXho4wDVq1UOXi+DI1kNTG7Bgg9ZAvCZ2usVg=
